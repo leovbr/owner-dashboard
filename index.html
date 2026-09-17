@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <title>Owner Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">OWNER DASHBOARD</p>
+      <h1>Buku Kas Usaha</h1>
+      <p class="muted">Catat penjualan, pengeluaran, dan hasil bersih harian.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card date-card">
+      <label for="reportDate">Tanggal laporan</label>
+      <div class="date-row">
+        <input id="reportDate" type="date">
+        <button id="loadDateBtn" class="btn secondary">Muat</button>
+      </div>
+      <p id="statusText" class="status">Laporan baru</p>
+    </section>
+
+    <section class="summary-grid">
+      <article class="summary income"><span>Omzet</span><strong id="incomeTotal">Rp0</strong></article>
+      <article class="summary expense"><span>Pengeluaran</span><strong id="expenseTotal">Rp0</strong></article>
+      <article class="summary profit"><span>Laba / Sisa</span><strong id="profitTotal">Rp0</strong></article>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <div><p class="eyebrow">PENJUALAN</p><h2>Barang terjual</h2></div>
+        <button id="clearSalesBtn" class="text-btn">Reset qty</button>
+      </div>
+      <div id="productsList" class="products"></div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <div><p class="eyebrow">PENGELUARAN</p><h2>Catatan biaya</h2></div>
+        <button id="addExpenseBtn" class="btn small">+ Tambah</button>
+      </div>
+      <div id="expensesList" class="expenses"></div>
+      <div class="expense-total"><span>Total pengeluaran</span><strong id="expenseTotalBottom">Rp0</strong></div>
+    </section>
+
+    <button id="saveBtn" class="save-btn">Simpan laporan</button>
+
+    <section class="card history-card">
+      <div class="section-head">
+        <div><p class="eyebrow">RIWAYAT</p><h2>Laporan tersimpan</h2></div>
+        <button id="clearHistoryBtn" class="text-btn danger">Hapus semua</button>
+      </div>
+      <div id="historyList" class="history-list"></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
