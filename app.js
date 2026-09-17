@@ -1,15 +1,15 @@
 const PRODUCTS = [
-  {name:'1 potong ayam original',price:8000,image:'https://loremflickr.com/640/480/fried,chicken?lock=101'},
-  {name:'1 ayam spicy tanpa nasi',price:11000,image:'https://loremflickr.com/640/480/spicy,chicken?lock=102'},
-  {name:'1 ayam spicy pakai nasi',price:13000,image:'https://loremflickr.com/640/480/chicken,rice?lock=103'},
-  {name:'1 ayam geprek tanpa nasi',price:11000,image:'https://loremflickr.com/640/480/indonesian,fried,chicken?lock=104'},
-  {name:'1 ayam geprek pakai nasi',price:13000,image:'https://loremflickr.com/640/480/fried,chicken,rice?lock=105'},
-  {name:'1 jamur crispy',price:5000,image:'https://loremflickr.com/640/480/fried,mushroom?lock=106'},
-  {name:'1 tusuk bakso',price:1000,image:'https://loremflickr.com/640/480/meatball,skewer?lock=107'},
-  {name:'1 sambal geprek saja',price:3000,image:'https://loremflickr.com/640/480/chili,sauce,sambal?lock=108'},
-  {name:'1 nasi saja',price:3000,image:'https://loremflickr.com/640/480/white,rice,bowl?lock=109'},
-  {name:'1 cup usus ayam',price:5000,image:'https://loremflickr.com/640/480/chicken,intestine?lock=110'},
-  {name:'1 hati rampela',price:5000,image:'https://loremflickr.com/640/480/chicken,liver?lock=111'}
+  {name:'1 potong ayam original',price:8000},
+  {name:'1 ayam spicy tanpa nasi',price:11000},
+  {name:'1 ayam spicy pakai nasi',price:13000},
+  {name:'1 ayam geprek tanpa nasi',price:11000},
+  {name:'1 ayam geprek pakai nasi',price:13000},
+  {name:'1 jamur crispy',price:5000},
+  {name:'1 tusuk bakso',price:1000},
+  {name:'1 sambal geprek saja',price:3000},
+  {name:'1 nasi saja',price:3000},
+  {name:'1 cup usus ayam',price:5000},
+  {name:'1 hati rampela',price:5000}
 ];
 
 const STORAGE_KEY = 'owner_dashboard_reports_v1';
@@ -24,7 +24,7 @@ function saveReports(data){localStorage.setItem(STORAGE_KEY,JSON.stringify(data)
 function renderProducts(savedSales={}){
   $('productsList').innerHTML=PRODUCTS.map((product,i)=>`
     <div class="product-row">
-      <div class="product-image-wrap"><img class="product-image" src="${product.image}" alt="${escapeHtml(product.name)}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"><div class="product-image-fallback">🍽️</div></div>
+      <div class="product-number">${String(i+1).padStart(2,'0')}</div>
       <div class="product-info"><div class="product-name">${product.name}</div><div class="product-price">${rupiah(product.price)} / pcs</div></div>
       <input class="product-qty" data-index="${i}" type="number" min="0" step="1" value="${Number(savedSales[i]||0)}" aria-label="Jumlah ${escapeHtml(product.name)}">
       <div class="product-total" id="productTotal${i}">${rupiah((savedSales[i]||0)*product.price)}</div>
