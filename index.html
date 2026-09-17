@@ -4,20 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#111827">
-  <title>Owner Dashboard</title>
+  <title>Buku Kas Usaha Ayam KFC Bang Yogi</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="topbar">
-    <div>
-      <p class="eyebrow">OWNER DASHBOARD</p>
-      <h1>Buku Kas Usaha</h1>
-      <p class="muted">Catat penjualan, pengeluaran, dan hasil bersih harian.</p>
+    <div class="hero-content">
+      <div class="hero-badge"><span class="pulse-dot"></span> OWNER DASHBOARD</div>
+      <h1>Buku Kas Usaha<br><span>Ayam KFC Bang Yogi</span></h1>
+      <p class="muted">Catat penjualan, pengeluaran, dan hasil bersih harian dengan rapi.</p>
+      <div class="hero-line"></div>
     </div>
+    <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
   </header>
 
   <main class="container">
-    <section class="card date-card">
+    <section class="card date-card reveal">
       <label for="reportDate">Tanggal laporan</label>
       <div class="date-row">
         <input id="reportDate" type="date">
@@ -26,13 +28,13 @@
       <p id="statusText" class="status">Laporan baru</p>
     </section>
 
-    <section class="summary-grid">
-      <article class="summary income"><span>Omzet</span><strong id="incomeTotal">Rp0</strong></article>
-      <article class="summary expense"><span>Pengeluaran</span><strong id="expenseTotal">Rp0</strong></article>
-      <article class="summary profit"><span>Laba / Sisa</span><strong id="profitTotal">Rp0</strong></article>
+    <section class="summary-grid reveal">
+      <article class="summary income"><div class="summary-icon">↗</div><span>Omzet</span><strong id="incomeTotal">Rp0</strong></article>
+      <article class="summary expense"><div class="summary-icon">↘</div><span>Pengeluaran</span><strong id="expenseTotal">Rp0</strong></article>
+      <article class="summary profit"><div class="summary-icon">✓</div><span>Laba / Sisa</span><strong id="profitTotal">Rp0</strong></article>
     </section>
 
-    <section class="card">
+    <section class="card reveal">
       <div class="section-head">
         <div><p class="eyebrow">PENJUALAN</p><h2>Barang terjual</h2></div>
         <button id="clearSalesBtn" class="text-btn">Reset qty</button>
@@ -40,7 +42,7 @@
       <div id="productsList" class="products"></div>
     </section>
 
-    <section class="card">
+    <section class="card reveal">
       <div class="section-head">
         <div><p class="eyebrow">PENGELUARAN</p><h2>Catatan biaya</h2></div>
         <button id="addExpenseBtn" class="btn small">+ Tambah</button>
@@ -49,9 +51,9 @@
       <div class="expense-total"><span>Total pengeluaran</span><strong id="expenseTotalBottom">Rp0</strong></div>
     </section>
 
-    <button id="saveBtn" class="save-btn">Simpan laporan</button>
+    <button id="saveBtn" class="save-btn reveal"><span>Simpan laporan</span><b>✓</b></button>
 
-    <section class="card history-card">
+    <section class="card history-card reveal">
       <div class="section-head">
         <div><p class="eyebrow">RIWAYAT</p><h2>Laporan tersimpan</h2></div>
         <button id="clearHistoryBtn" class="text-btn danger">Hapus semua</button>
